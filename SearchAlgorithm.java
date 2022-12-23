@@ -5,8 +5,9 @@
 Write your code in this editor and press "Run" button to execute it.
 
 *******************************************************************************/
-import java.util.*;
-public class Main
+import java.util.Scanner;
+
+public class SearchAlgorithm
 {
 	public static void main(String[] args) {
 
