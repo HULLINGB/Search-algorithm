@@ -43,7 +43,7 @@ public class Main
         for(int i = 0; i < array.length; i++)
         {
             //int num = array4.get(i);
-            System.out.println(map.get(array4.get(i)));
+            System.out.println("Account number " + map.get(array4.get(i)) + " has the most matching characters to your search");
         }
 	}
 }
