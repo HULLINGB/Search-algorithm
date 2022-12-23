@@ -1,6 +1,9 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Collections;
 
-public class Main
+public class SearchAlgorithm
 {
 	public static void main(String[] args) 
 	{
@@ -22,9 +25,11 @@ public class Main
                 if(array1[i] == array2[i])
                 {
                     charsInARow = charsInARow + 1;
+                }else{
+                    break;
                 }
             }
-            if(charsInARow > 1)
+            if(charsInARow > 0)
             {
                 array4.add(charsInARow);
             }else
@@ -34,18 +39,21 @@ public class Main
             charsInARow = 0;
         }
         
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
-            map.put(array4.get(i), String.valueOf(i));
+            map.put(array4.get(i), i);
         }
         Collections.sort(array4, Collections.reverseOrder()); 
-
+        int value = 0;
         for(int i = 0; i < array.length; i++)
         {
             if(array4.get(i) > 0)
             {
-                System.out.println("Account number " + map.get(array4.get(i)) + " has the most matching characters to your search");
+                value = map.get(array4.get(i)) + 1;
+                System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
+                System.out.println("Account number: " + value + " has the most matching characters to your search");
+               System.out.println("Array position " + String.valueOf(map.get(array4.get(i))));
             }
         }
 	}
