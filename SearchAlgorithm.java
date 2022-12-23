@@ -52,8 +52,9 @@ public class SearchAlgorithm
             {
                 value = map.get(array4.get(i)) + 1;
                 System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
-                System.out.println("Account number: " + value + " has the most matching characters to your search");
-               System.out.println("Array position " + String.valueOf(map.get(array4.get(i))));
+                System.out.print("Array position " + String.valueOf(map.get(array4.get(i))) + "  ");
+                System.out.println("Account number " + String.valueOf(value) + "  ");
+			   System.out.println("has the most matching characters to your search");
             }
         }
 	}
