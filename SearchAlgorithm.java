@@ -1,10 +1,9 @@
-/******************************************************************************
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
 
-*******************************************************************************/
+/**
+	This algorithm searches for the names that match
+	with the most matching characters to the Scanner input.
+**/
 import java.util.Scanner;
 
 public class SearchAlgorithm
@@ -36,14 +35,12 @@ public class SearchAlgorithm
         HashMap<Integer, String> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
-            //int num = array4.get(i);
             map.put(array4.get(i), String.valueOf(i));
         }
         Collections.sort(array4, Collections.reverseOrder()); 
 
         for(int i = 0; i < array.length; i++)
         {
-            //int num = array4.get(i);
             System.out.println("Account number " + map.get(array4.get(i)) + " has the most matching characters to your search");
         }
 	}
