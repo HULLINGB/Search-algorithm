@@ -1,14 +1,9 @@
+import java.util.*;
 
-
-/**
-	This algorithm searches for the names that match
-	with the most matching characters to the Scanner input.
-**/
-import java.util.Scanner;
-
-public class SearchAlgorithm
+public class Main
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 
         String[] array = {"John", "Jacob", "Joseph", "Brad", "Ariana", "Elon", "Oprah", "Philip", "Rodney", "Oliver", "Ralph"};
         int charsInARow = 0;
@@ -29,9 +24,16 @@ public class SearchAlgorithm
                     charsInARow = charsInARow + 1;
                 }
             }
-            array4.add(charsInARow);
+            if(charsInARow > 1)
+            {
+                array4.add(charsInARow);
+            }else
+            {
+                array4.add(0);
+            }
             charsInARow = 0;
         }
+        
         HashMap<Integer, String> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
@@ -41,7 +43,10 @@ public class SearchAlgorithm
 
         for(int i = 0; i < array.length; i++)
         {
-            System.out.println("Account number " + map.get(array4.get(i)) + " has the most matching characters to your search");
+            if(array4.get(i) > 0)
+            {
+                System.out.println("Account number " + map.get(array4.get(i)) + " has the most matching characters to your search");
+            }
         }
 	}
 }
