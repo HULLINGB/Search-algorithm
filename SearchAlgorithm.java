@@ -29,7 +29,12 @@ public class SearchAlgorithm
                     break;
                 }
             }
-            if(charsInARow > 1)
+			//1 or 2 charsInARow and above is suitable for our database size of 9.
+			//if we have millions or billions of account names, we could require
+			//3 or 4 charsInARow and require more specific searches with more characters
+			//When we do the search we just get good search results with only 1 or 2
+			//letters searched. If we have more account names we may need 3, 4, 5.
+            if(charsInARow > 0)
             {
                 array4.add(charsInARow);
             }else
@@ -38,7 +43,6 @@ public class SearchAlgorithm
             }
             charsInARow = 0;
         }
-        
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
@@ -52,7 +56,7 @@ public class SearchAlgorithm
             {
                 value = map.get(array4.get(i)) + 1;
                 System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
-                System.out.print("Array position " + String.valueOf(map.get(array4.get(i))) + "  ");
+                System.out.print("array[" + String.valueOf(map.get(array4.get(i))) + "]  ");
                 System.out.println("Account number " + String.valueOf(value) + "  ");
 			   System.out.println("has the most matching characters to your search");
             }
