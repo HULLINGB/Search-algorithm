@@ -8,18 +8,19 @@ public class SearchAlgorithm
 	public static void main(String[] args) 
 	{
 
-        String[] array = {"John", "Jacob", "Joseph", "Brad", "Ariana", "Elon", "Oprah", "Philip", "Rodney", "Oliver", "Ralph"};
+        String[] array = {"johnjacobs", "jacobjohn", "johnjoco", "robertdowneyjr", "josephrodrigo", "bradhullinger", "arianagrande", "elonmusk", "oprahwinfrey", "philipvegas", "rodneyhullinger", "oliverwhicom", "ralphnaider", "michaelphelps",
+		"selenagomez", "amandacerny", "chrisevans", "chrishemsworth", "bradpitt", "bradleycooper", "anadearmas", "oliviarodrigo", "billgates", "jimcarrey", "davechappel", "lebronjames", "willsmith", "sethmacfarlane",
+		"dualipa", "alexisren", "emmawatson", "donaldjtrump", "joebiden", "edwardnorton", "billgates", "markzuckerberg", "beyonce", "kevinhart"};
         int charsInARow = 0;
         ArrayList<Integer> array4 = new ArrayList<Integer>(array.length);
         System.out.println("Please enter the name you are searching for");
         Scanner myObj = new Scanner(System.in);
         String input = myObj.nextLine();
-        char[] array1 = input.toCharArray(); 
-
+        char[] array1 = input.toCharArray();
+		int num = 10;
         for(int a = 0; a < array.length; a++)
         {
         char[] array2 = array[a].toCharArray();
-        
             for(int i = 0; i < array1.length; i++)
             {
                 if(array1[i] == array2[i])
@@ -29,6 +30,10 @@ public class SearchAlgorithm
                     break;
                 }
             }
+			if(charsInARow == array2.length)
+			{
+				charsInARow = charsInARow + 2;
+			}
 			//1 or 2 charsInARow and above is suitable for a small sample size.
 			//if we have millions or billions of account names, we could require
 			//3, 4, or 5 charsInARow to count the account name in our list of results
@@ -44,28 +49,36 @@ public class SearchAlgorithm
             }
             charsInARow = 0;
         }
-		
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
             map.put(array4.get(i), i);
         }
         Collections.sort(array4, Collections.reverseOrder()); 
-        int value = 0;
 		if(array4.get(0) == 0)
         {
             System.out.println("No accounts match your search");
             System.out.println("Please enter a more specific search");
         }
-        for(int i = 0; i < array.length; i++)
+        int value = 0;
+        for(int i = 0; i < num; i++)
         {
+            charsInARow = array4.get(i);
             if(array4.get(i) > 0)
             {
-                value = map.get(array4.get(i)) + 1;
                 System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
                 System.out.print("array[" + String.valueOf(map.get(array4.get(i))) + "]  ");
+				value = map.get(array4.get(i)) + 1;
                 System.out.println("Account number " + String.valueOf(value) + "  ");
 			   System.out.println("has the most matching characters to your search");
+                char[] array5 = array[map.get(array4.get(i))].toCharArray();
+			   if(charsInARow > array5.length)
+			   {
+			       charsInARow = charsInARow - 2;
+			       System.out.println("Number of matching chars to the account name is " + charsInARow);
+			   }else{
+			       System.out.println("Number of matching chars to the account name is " + charsInARow);
+			   }
             }
         }
 	}
