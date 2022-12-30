@@ -29,11 +29,12 @@ public class SearchAlgorithm
                     break;
                 }
             }
-			//1 or 2 charsInARow and above is suitable for our database size of 9.
+			//1 or 2 charsInARow and above is suitable for a small sample size.
 			//if we have millions or billions of account names, we could require
-			//3 or 4 charsInARow and require more specific searches with more characters
-			//When we do the search we just get good search results with only 1 or 2
-			//letters searched. If we have more account names we may need 3, 4, 5.
+			//3, 4, or 5 charsInARow to count the account name in our list of results
+			//because repeat values for charsInARow in our HashMap will automatically default
+			//to the last assigned input to the hashmap, and will possibly print those values 
+			//multiple times in a row.
             if(charsInARow > 0)
             {
                 array4.add(charsInARow);
@@ -43,6 +44,7 @@ public class SearchAlgorithm
             }
             charsInARow = 0;
         }
+		
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
