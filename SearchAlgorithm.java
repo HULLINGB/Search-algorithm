@@ -7,7 +7,6 @@ public class SearchAlgorithm
 {
 	public static void main(String[] args) 
 	{
-
         String[] array = {"johnjacobs", "jacobjohn", "johnjoco", "robertdowneyjr", "josephrodrigo", "bradhullinger", "arianagrande", "elonmusk", "oprahwinfrey", "philipvegas", "rodneyhullinger", "oliverwhicom", "ralphnaider", "michaelphelps",
 		"selenagomez", "amandacerny", "chrisevans", "chrishemsworth", "bradpitt", "bradleycooper", "anadearmas", "oliviarodrigo", "billgates", "jimcarrey", "davechappel", "lebronjames", "willsmith", "sethmacfarlane",
 		"dualipa", "alexisren", "emmawatson", "donaldjtrump", "joebiden", "edwardnorton", "billgates", "markzuckerberg", "beyonce", "kevinhart"};
@@ -63,7 +62,6 @@ public class SearchAlgorithm
         int value = 0;
         for(int i = 0; i < num; i++)
         {
-            charsInARow = array4.get(i);
             if(array4.get(i) > 0)
             {
                 System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
@@ -72,7 +70,7 @@ public class SearchAlgorithm
                 System.out.println("Account number " + String.valueOf(value) + "  ");
 			   System.out.println("has the most matching characters to your search");
                 char[] array5 = array[map.get(array4.get(i))].toCharArray();
-			   if(charsInARow > array5.length)
+			   if(array4.get(i) > array5.length)
 			   {
 			       charsInARow = charsInARow - 2;
 			       System.out.println("Number of matching chars to the account name is " + charsInARow);
