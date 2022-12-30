@@ -52,6 +52,11 @@ public class SearchAlgorithm
         }
         Collections.sort(array4, Collections.reverseOrder()); 
         int value = 0;
+		if(array4.get(0) == 0)
+        {
+            System.out.println("No accounts match your search");
+            System.out.println("Please enter a more specific search");
+        }
         for(int i = 0; i < array.length; i++)
         {
             if(array4.get(i) > 0)
