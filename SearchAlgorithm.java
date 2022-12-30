@@ -29,7 +29,7 @@ public class SearchAlgorithm
                     break;
                 }
             }
-            if(charsInARow > 0)
+            if(charsInARow > 1)
             {
                 array4.add(charsInARow);
             }else
