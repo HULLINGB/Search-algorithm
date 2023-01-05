@@ -42,8 +42,7 @@ public class SearchAlgorithm
             if(charsInARow > 1)
             {
                 array4.add(charsInARow);
-            }else
-            {
+            }else{
                 array4.add(0);
             }
             charsInARow = 0;
@@ -70,12 +69,13 @@ public class SearchAlgorithm
                 System.out.println("Account number " + String.valueOf(value) + "  ");
 			   System.out.println("has the most matching characters to your search");
                 char[] array5 = array[map.get(array4.get(i))].toCharArray();
+                charsInARow = array4.get(i);
 			   if(array4.get(i) > array5.length)
 			   {
 			       charsInARow = charsInARow - 2;
-			       System.out.println("Number of matching chars to the account name is " + charsInARow);
+			       System.out.println(charsInARow + " matching characters");
 			   }else{
-			       System.out.println("Number of matching chars to the account name is " + charsInARow);
+			       System.out.println(charsInARow + " matching characters");
 			   }
             }
         }
