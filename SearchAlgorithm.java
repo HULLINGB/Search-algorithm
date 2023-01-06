@@ -6,6 +6,7 @@ import java.util.Collections;
 
 public class Search
 {
+	
 	public static void main(String[] args) 
 	{
         String[] array = {"johnjacobs", "jacobjohn", "johnjoco", "robertdowneyjr", "josephrodrigo", "bradhullinger", "arianagrande", "elonmusk", "oprahwinfrey", "philipvegas", "rodneyhullinger", "oliverwhicom", "ralphnaider", "michaelphelps",
@@ -76,7 +77,6 @@ public class Search
             System.out.println("Please enter a more specific search");
         }
         int value = 0;
-        int l = 0;
         for(int i = 0; i < num; i++)
         {
             if(array4.get(i) > 0)
