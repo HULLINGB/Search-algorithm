@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Collections;
 
 
-public class SearchAlgorithm
+public class Main
 {
 	public static void main(String[] args) 
 	{
@@ -56,7 +56,7 @@ public class SearchAlgorithm
 			//because repeat values for charsInARow in our HashMap will automatically default
 			//to the last assigned input to the hashmap, and will possibly print those values 
 			//multiple times in a row.
-            if(charsInARow > 2)
+            if(charsInARow > 1)
             {
                 array4.add(charsInARow);
             }else{
