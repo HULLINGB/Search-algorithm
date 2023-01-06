@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Collections;
 
 
-public class Main
+public class Search
 {
 	public static void main(String[] args) 
 	{
