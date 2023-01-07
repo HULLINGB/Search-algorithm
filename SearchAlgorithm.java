@@ -16,7 +16,7 @@ public class Search
 			"hughjackman", "ryanreynolds", "blakelively", "mattdamon", "sylvesterstallone", "camerondiaz", "georgeclooney", "stevenspielberg", "harrisonford", "robertdeniro", "alpacino", "russelcrowe", "liamneeson", "katewinslet",
 			"markwahlberg", "natalieportman", "piercebrosman", "seanconnery", "orlandobloom", "katieperry", "dwaynejohnson", "jackiechan", "jetli", "adamsandler", "davidspade", "scarlettjohansson", "annehathaway", "jessicaalba",
 			"willferrell", "juliarobert", "juliaroberts", "jenifferaniston", "nicolascage", "danielcraig", "keanureeves", "ianmckellen", "halleberry", "brucewillis",
-			"samuelljackson", "benstiller", "tommyleejones", "denzelwashington", "stevecarell", "meganfox", "vindiesel", "timallen", "robinwilliams", "owenwilson", "zachgalifianakis", "chistianbale", "sandrabullock", "brucelee", "drewbarrymore", "jacknicholson", "billmurray", "jasonstatham", "katebeckinsale"
+			"samuelljackson", "benstiller", "tommyleejones", "denzelwashington", "stevecarell", "meganfox", "vindiesel", "timallen", "robinwilliams", "owenwilson", "zachgalifianakis", "christianbale", "sandrabullock", "brucelee", "drewbarrymore", "jacknicholson", "billmurray", "jasonstatham", "katebeckinsale"
         };
         int charsInARow = 0;
         ArrayList<Integer> array4 = new ArrayList<Integer>(array.length);
