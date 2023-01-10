@@ -15,7 +15,7 @@ public class Search
             "justinbieber", "icecube", "therock", "galgagot", "chrisbrown", "robertdowneryjr", "leonardodicaprio", "tomcruise", "charliechaplin", "morganfreeman", "tomhanks",
 			"hughjackman", "ryanreynolds", "blakelively", "mattdamon", "sylvesterstallone", "camerondiaz", "georgeclooney", "stevenspielberg", "harrisonford", "robertdeniro", "alpacino", "russelcrowe", "liamneeson", "katewinslet",
 			"markwahlberg", "natalieportman", "piercebrosman", "seanconnery", "orlandobloom", "katieperry", "dwaynejohnson", "jackiechan", "jetli", "adamsandler", "davidspade", "scarlettjohansson", "annehathaway", "jessicaalba",
-			"willferrell", "juliarobert", "juliaroberts", "jenifferaniston", "nicolascage", "danielcraig", "keanureeves", "ianmckellen", "halleberry", "brucewillis",
+			"willferrell", "juliaroberts", "jenifferaniston", "nicolascage", "danielcraig", "keanureeves", "ianmckellen", "halleberry", "brucewillis",
 			"samuelljackson", "benstiller", "tommyleejones", "denzelwashington", "stevecarell", "meganfox", "vindiesel", "timallen", "robinwilliams", "owenwilson", "zachgalifianakis", "christianbale", "sandrabullock", "brucelee", "drewbarrymore", "jacknicholson", "billmurray", "jasonstatham", "katebeckinsale"
         };
         int charsInARow = 0;
@@ -42,15 +42,23 @@ public class Search
 			{
 				charsInARow = charsInARow + 2;
 			}
-			while(x < array4.size())
-            {
-                if(array4.get(x).equals(charsInARow))
-                {
-                    charsInARow++;
-                }
-                x++;
-            }
-            x = 0;
+			//Puttin this little checker will ensure that all the values
+			//that dont have any matching characters get a higher charsInARow
+			//for no reason. This is will make sure only accounts that had matching
+			//characters will be part of the mechanism that creates different values
+			//for the HashMap value reference so we dont have duplicate in our output
+			if(charsInARow > 0)
+			{
+				while(x < array4.size())
+				{
+					if(array4.get(x).equals(charsInARow))
+					{
+						charsInARow++;
+					}
+					x++;
+				}
+				x = 0;
+			}
             //1 or 2 charsInARow and above is suitable for a small sample size.
 			//if we have millions or billions of account names, we could require
 			//3, 4, or 5 charsInARow to count the account name in our list of results
