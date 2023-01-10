@@ -47,7 +47,7 @@ public class Search
 			//for no reason. This is will make sure only accounts that had matching
 			//characters will be part of the mechanism that creates different values
 			//for the HashMap value reference so we dont have duplicate in our output
-			if(charsInARow > 0)
+			if(charsInARow > 1)
 			{
 				while(x < array4.size())
 				{
