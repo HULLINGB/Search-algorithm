@@ -19,7 +19,7 @@ public class Search
 			"samuelljackson", "benstiller", "tommyleejones", "denzelwashington", "stevecarell", "meganfox", "vindiesel", "timallen", "robinwilliams", "owenwilson", "zachgalifianakis", "christianbale", "sandrabullock", "brucelee", "drewbarrymore", "jacknicholson", "billmurray", "jasonstatham", "katebeckinsale"
         };
         int charsInARow = 0;
-        ArrayList<Integer> array4 = new ArrayList<Integer>(array.length);
+        ArrayList<Integer> array3 = new ArrayList<Integer>(array.length);
         System.out.println("Please enter the name you are searching for");
         Scanner myObj = new Scanner(System.in);
         String input = myObj.nextLine();
@@ -49,9 +49,9 @@ public class Search
 			//for the HashMap value reference so we dont have duplicate in our output
 			if(charsInARow > 1)
 			{
-				while(x < array4.size())
+				while(x < array3.size())
 				{
-					if(array4.get(x).equals(charsInARow))
+					if(array3.get(x).equals(charsInARow))
 					{
 						charsInARow++;
 					}
@@ -67,19 +67,19 @@ public class Search
 			//multiple times in a row.
             if(charsInARow > 1)
             {
-                array4.add(charsInARow);
+                array3.add(charsInARow);
             }else{
-                array4.add(0);
+                array3.add(0);
             }
             charsInARow = 0;
         }
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < array.length; i++)
         {
-            map.put(array4.get(i), i);
+            map.put(array3.get(i), i);
         }
-        Collections.sort(array4, Collections.reverseOrder()); 
-		if(array4.get(0) == 0)
+        Collections.sort(array3, Collections.reverseOrder()); 
+		if(array3.get(0) == 0)
         {
             System.out.println("No accounts match your search");
             System.out.println("Please enter a more specific search");
@@ -87,11 +87,11 @@ public class Search
         int value = 0;
         for(int i = 0; i < num; i++)
         {
-            if(array4.get(i) > 0)
+            if(array3.get(i) > 0)
             {
-                System.out.println("Account: " + array[map.get(array4.get(i))] + " matches your search  ");
-                System.out.print("array[" + String.valueOf(map.get(array4.get(i))) + "]  ");
-				value = map.get(array4.get(i)) + 1;
+                System.out.println("Account: " + array[map.get(array3.get(i))] + " matches your search  ");
+                System.out.print("array[" + String.valueOf(map.get(array3.get(i))) + "]  ");
+				value = map.get(array3.get(i)) + 1;
                 System.out.println("Account number " + String.valueOf(value) + "  ");
 			   System.out.println("has the most matching characters to your search");
             }
