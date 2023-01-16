@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Collections;
 
 
-public class Search
+public class Main
 {
 	
 	public static void main(String[] args) 
 	{
-        String[] array = {"johnjacobs", "jacobjohn", "johnjoco", "robertdowneyjr", "josephrodrigo", "bradhullinger", "arianagrande", "elonmusk", "oprahwinfrey", "philipvegas", "rodneyhullinger", "oliverwhicom", "ralphnaider", "michaelphelps",
-		"selenagomez", "amandacerny", "chrisevans", "chrishemsworth", "bradpitt", "bradleycooper", "anadearmas", "oliviarodrigo", "billgates", "jimcarrey", "davechappel", "lebronjames", "willsmith", "sethmacfarlane",
+        String[] array = {"johnjacobs", "jacobjohn", "johnjoco", "robertdowneyjr", "josephrodrigo","elonmusk", "oprahwinfrey", "philipvegas", "rodneyhullinger", "oliverwhicom", "ralphnaider", "michaelphelps",
+		"selenagomez", "amandacerny", "chrisevans", "chrishemsworth", "arianagrande", "bradleycooper", "bradhullinger", "anadearmas", "oliviarodrigo", "billgates", "jimcarrey", "davechappel", "lebronjames", "willsmith", "sethmacfarlane",
 		"dualipa", "alexisren", "emmawatson", "donaldjtrump", "joebiden", "edwardnorton", "billgates", "markzuckerberg", "beyonce", "kevinhart", "jimcarrey", "jenniferlopez",
-            "justinbieber", "icecube", "therock", "galgagot", "chrisbrown", "robertdowneryjr", "leonardodicaprio", "tomcruise", "charliechaplin", "morganfreeman", "tomhanks",
+            "justinbieber", "icecube", "bradpitt", "therock", "galgagot", "chrisbrown", "robertdowneryjr", "leonardodicaprio", "tomcruise", "charliechaplin", "morganfreeman", "tomhanks",
 			"hughjackman", "ryanreynolds", "blakelively", "mattdamon", "sylvesterstallone", "camerondiaz", "georgeclooney", "stevenspielberg", "harrisonford", "robertdeniro", "alpacino", "russelcrowe", "liamneeson", "katewinslet",
 			"markwahlberg", "natalieportman", "piercebrosman", "seanconnery", "orlandobloom", "katieperry", "dwaynejohnson", "jackiechan", "jetli", "adamsandler", "davidspade", "scarlettjohansson", "annehathaway", "jessicaalba",
 			"willferrell", "juliaroberts", "jenifferaniston", "nicolascage", "danielcraig", "keanureeves", "ianmckellen", "halleberry", "brucewillis",
@@ -24,7 +24,7 @@ public class Search
         Scanner myObj = new Scanner(System.in);
         String input = myObj.nextLine();
         char[] array1 = input.toCharArray();
-		int num = 10;
+		int num = 25;
 		int x = 0;
         for(int a = 0; a < array.length; a++)
         {
@@ -47,9 +47,10 @@ public class Search
 			//for no reason. This is will make sure only accounts that had matching
 			//characters will be part of the mechanism that creates different values
 			//for the HashMap value reference so we dont have duplicate in our output
-			if(charsInARow > 1)
+			
+			if(charsInARow > 0)
 			{
-				while(x < array3.size())
+			  while(x < array3.size())
 				{
 					if(array3.get(x).equals(charsInARow))
 					{
@@ -59,18 +60,19 @@ public class Search
 				}
 				x = 0;
 			}
-            //1 or 2 charsInARow and above is suitable for a small sample size.
-			//if we have millions or billions of account names, we could require
-			//3, 4, or 5 charsInARow to count the account name in our list of results
-			//because repeat values for charsInARow in our HashMap will automatically default
-			//to the last assigned input to the hashmap, and will possibly print those values 
-			//multiple times in a row.
-            if(charsInARow > 1)
-            {
-                array3.add(charsInARow);
-            }else{
-                array3.add(0);
-            }
+			if(array1.length > 1)
+			{
+			    if(charsInARow > 1)
+			    {
+			    array3.add(charsInARow);
+			    }else{
+			    array3.add(0);
+			    }   
+			}
+			if(array1.length < 2)
+			{
+			    array3.add(charsInARow);
+			}
             charsInARow = 0;
         }
         HashMap<Integer, Integer> map = new HashMap<>();
